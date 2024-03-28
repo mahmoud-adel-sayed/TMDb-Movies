@@ -13,7 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.movies.movie.detail.ui.MovieDetailsScreen
-import com.example.movies.movie.list.ui.MoviesScreen
+import com.example.movies.movie.popular.ui.PopularMoviesScreen
 
 /**
  * Destinations used in the App.
@@ -36,7 +36,7 @@ fun NavGraph(
         composable(
             route = MainDestinations.POPULAR_MOVIES_ROUTE,
         ) { backStackEntry: NavBackStackEntry ->
-            MoviesScreen(
+            PopularMoviesScreen(
                 onBackPressed = onBackPressed,
                 onMovieClick = {
                     actions.onMovieClick(it, backStackEntry)

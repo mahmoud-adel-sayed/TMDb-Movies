@@ -2,7 +2,7 @@ package com.example.movies.movie.detail.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movies.common.model.UiState
+import com.example.movies.movie.common.ui.model.UiState
 import com.example.movies.movie.detail.domain.model.MovieDetails
 import com.example.movies.movie.detail.domain.usecase.GetMovieDetailsUseCase
 import com.example.movies.util.Resource

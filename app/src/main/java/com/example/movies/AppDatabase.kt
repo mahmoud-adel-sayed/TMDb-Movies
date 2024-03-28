@@ -2,10 +2,10 @@ package com.example.movies
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.movies.movie.list.data.source.local.dao.MoviesDao
-import com.example.movies.movie.list.data.source.local.dao.RemoteKeysDao
-import com.example.movies.movie.list.data.source.local.entity.MovieEntity
-import com.example.movies.movie.list.data.source.local.entity.RemoteKeyEntity
+import com.example.movies.movie.popular.data.source.local.dao.MoviesDao
+import com.example.movies.movie.popular.data.source.local.dao.RemoteKeysDao
+import com.example.movies.movie.popular.data.source.local.entity.MovieEntity
+import com.example.movies.movie.popular.data.source.local.entity.RemoteKeyEntity
 
 @Database(
     entities = [MovieEntity::class, RemoteKeyEntity::class],

@@ -2,7 +2,7 @@ package com.example.movies.movie.detail.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.asLiveData
-import com.example.movies.common.model.UiState
+import com.example.movies.movie.common.ui.model.UiState
 import com.example.movies.movie.detail.domain.model.Genre
 import com.example.movies.movie.detail.domain.model.MovieDetails
 import com.example.movies.movie.detail.domain.usecase.GetMovieDetailsUseCase

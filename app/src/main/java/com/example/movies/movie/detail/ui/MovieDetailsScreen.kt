@@ -31,8 +31,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.movies.R
-import com.example.movies.common.model.UiState
-import com.example.movies.common.ui.TopAppBar
+import com.example.movies.movie.common.ui.model.UiState
+import com.example.movies.movie.common.ui.TopAppBar
 import com.example.movies.movie.detail.domain.model.Genre
 import com.example.movies.movie.detail.domain.model.MovieDetails
 import com.example.movies.theme.AppTheme

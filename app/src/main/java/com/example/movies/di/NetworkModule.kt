@@ -1,6 +1,6 @@
 package com.example.movies.di
 
-import com.example.movies.api.MoviesApi
+import com.example.movies.movie.common.data.source.remote.api.MoviesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

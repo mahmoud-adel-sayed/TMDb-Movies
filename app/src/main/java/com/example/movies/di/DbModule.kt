@@ -3,8 +3,8 @@ package com.example.movies.di
 import android.content.Context
 import androidx.room.Room
 import com.example.movies.AppDatabase
-import com.example.movies.movie.list.data.source.local.dao.MoviesDao
-import com.example.movies.movie.list.data.source.local.dao.RemoteKeysDao
+import com.example.movies.movie.popular.data.source.local.dao.MoviesDao
+import com.example.movies.movie.popular.data.source.local.dao.RemoteKeysDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
