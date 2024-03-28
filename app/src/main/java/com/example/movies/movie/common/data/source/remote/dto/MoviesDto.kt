@@ -1,4 +1,4 @@
-package com.example.movies.movie.popular.data.source.remote.model.dto
+package com.example.movies.movie.common.data.source.remote.dto
 
 import com.google.gson.annotations.SerializedName
 

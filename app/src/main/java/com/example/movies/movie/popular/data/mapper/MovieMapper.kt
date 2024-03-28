@@ -1,7 +1,7 @@
 package com.example.movies.movie.popular.data.mapper
 
 import com.example.movies.movie.popular.data.source.local.entity.MovieEntity
-import com.example.movies.movie.popular.data.source.remote.model.dto.MovieDto
+import com.example.movies.movie.common.data.source.remote.dto.MovieDto
 import com.example.movies.movie.popular.domain.model.Movie
 
 fun MovieEntity.toMovie(): Movie = Movie(
