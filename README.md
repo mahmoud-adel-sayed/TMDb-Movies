@@ -1,13 +1,13 @@
 # TMDb Movies
-This is a sample app that fetches a list of popular movies from The Movie Database (TMDb) API and 
+This is a sample app that fetches a list of popular, now playing and upcoming movies from The Movie Database (TMDb) API and 
 caches the result in a local database. The app uses pagination to load more pages when user scrolls
 down the list. When clicking on a specific movie a movie details screen will be shown with more info
 about the movie.
 
 ### Screenshots
-|                                                               |                                                                  |                                                                         
-|---------------------------------------------------------------|------------------------------------------------------------------|
-| <img width="250" src="screenshots/popular_movies_list.png" /> | <img width="250" src="screenshots/movie_details.png" />          |
+|                                                       |                                                                  |                                                                         
+|-------------------------------------------------------|------------------------------------------------------------------|
+| <img width="250" src="screenshots/movies_list.png" /> | <img width="250" src="screenshots/movie_details.png" />          |
 
 ### Build & Installation Instructions
 You must use Gradle JDK 11 to run the project.
@@ -22,7 +22,7 @@ tests for more classes and also add different kind of testing like UI, integrati
 testing.
 
 ### Resources
-1. APK link: <https://drive.google.com/file/d/1-x8jXOmClcDlR-TU4W43gnAzYe-5vvhP/view?usp=sharing>.
+1. APK link: <https://drive.google.com/file/d/1sUkXuY0sjq7ug4JbBVKekpQfIVkXA9cF/view?usp=sharing>.
 
 ### Libraries used
 * Lifecycle & ViewModel.
