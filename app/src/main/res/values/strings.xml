@@ -2,6 +2,9 @@
     <string name="app_name">Movies</string>
 
     <string name="popular_movies">Popular Movies</string>
+    <string name="popular">Popular</string>
+    <string name="now_playing">Now playing</string>
+    <string name="upcoming">Upcoming</string>
     <string name="movie_details">Movie Details</string>
     <string name="label_rating">Rating:</string>
     <string name="label_genres">Genres:</string>

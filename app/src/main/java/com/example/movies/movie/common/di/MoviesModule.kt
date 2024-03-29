@@ -5,9 +5,13 @@ import com.example.movies.movie.common.data.source.remote.api.MoviesApi
 import com.example.movies.movie.common.data.repo.MoviesRepositoryImpl
 import com.example.movies.movie.common.data.source.remote.MoviesRemoteDataSource
 import com.example.movies.movie.common.data.source.remote.MoviesRemoteDataSourceImpl
-import com.example.movies.movie.popular.data.source.local.dao.MoviesDao
+import com.example.movies.movie.popular.data.source.local.dao.PopularMoviesDao
 import com.example.movies.movie.popular.data.source.remote.PopularMoviesPageKeyedRemoteMediator
 import com.example.movies.movie.common.domain.repo.MoviesRepository
+import com.example.movies.movie.nowplaying.data.source.local.dao.NowPlayingMoviesDao
+import com.example.movies.movie.nowplaying.data.source.remote.NowPlayingMoviesPageKeyedRemoteMediator
+import com.example.movies.movie.upcoming.data.source.local.dao.UpcomingMoviesDao
+import com.example.movies.movie.upcoming.data.source.remote.UpcomingMoviesPageKeyedRemoteMediator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,6 +39,26 @@ object MoviesModule {
 
     @Provides
     @ViewModelScoped
+    fun provideNowPlayingMoviesPageKeyedRemoteMediator(
+        moviesApi: MoviesApi,
+        db: AppDatabase
+    ): NowPlayingMoviesPageKeyedRemoteMediator = NowPlayingMoviesPageKeyedRemoteMediator(
+        db = db,
+        moviesApi = moviesApi
+    )
+
+    @Provides
+    @ViewModelScoped
+    fun provideUpcomingMoviesPageKeyedRemoteMediator(
+        moviesApi: MoviesApi,
+        db: AppDatabase
+    ): UpcomingMoviesPageKeyedRemoteMediator = UpcomingMoviesPageKeyedRemoteMediator(
+        db = db,
+        moviesApi = moviesApi
+    )
+
+    @Provides
+    @ViewModelScoped
     fun provideMoviesRemoteDataSource(
         moviesApi: MoviesApi,
         dispatcher: CoroutineDispatcher
@@ -43,12 +67,20 @@ object MoviesModule {
     @Provides
     @ViewModelScoped
     fun provideMoviesRepository(
-        moviesDao: MoviesDao,
-        moviesPageKeyedRemoteMediator: PopularMoviesPageKeyedRemoteMediator,
+        popularMoviesDao: PopularMoviesDao,
+        nowPlayingMoviesDao: NowPlayingMoviesDao,
+        upcomingMoviesDao: UpcomingMoviesDao,
+        popularPageKeyedRemoteMediator: PopularMoviesPageKeyedRemoteMediator,
+        nowPlayingPageKeyedRemoteMediator: NowPlayingMoviesPageKeyedRemoteMediator,
+        upcomingPageKeyedRemoteMediator: UpcomingMoviesPageKeyedRemoteMediator,
         moviesRemoteDataSource: MoviesRemoteDataSource
     ): MoviesRepository = MoviesRepositoryImpl(
-        moviesDao,
-        moviesPageKeyedRemoteMediator,
+        popularMoviesDao,
+        nowPlayingMoviesDao,
+        upcomingMoviesDao,
+        popularPageKeyedRemoteMediator,
+        nowPlayingPageKeyedRemoteMediator,
+        upcomingPageKeyedRemoteMediator,
         moviesRemoteDataSource
     )
 }

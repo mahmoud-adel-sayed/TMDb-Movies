@@ -1,4 +1,4 @@
-package com.example.movies.movie.popular.ui
+package com.example.movies.movie.nowplaying.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,20 +22,20 @@ import com.example.movies.movie.common.domain.model.Movie
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun PopularMoviesScreen(
+fun NowPlayingMoviesScreen(
     modifier: Modifier = Modifier,
     onMovieClick: (movieId: Long) -> Unit,
-    popularMoviesViewModel: PopularMoviesViewModel = hiltViewModel()
+    nowPlayingMoviesViewModel: NowPlayingMoviesViewModel = hiltViewModel()
 ) {
-    PopularMoviesContent(
+    NowPlayingMoviesContent(
         modifier = modifier.semantics { testTagsAsResourceId = true },
-        movies = popularMoviesViewModel.getPopularMovies().collectAsLazyPagingItems(),
+        movies = nowPlayingMoviesViewModel.getNowPlayingMovies().collectAsLazyPagingItems(),
         onMovieClick = onMovieClick
     )
 }
 
 @Composable
-private fun PopularMoviesContent(
+private fun NowPlayingMoviesContent(
     modifier: Modifier = Modifier,
     movies: LazyPagingItems<Movie>,
     onMovieClick: (movieId: Long) -> Unit,

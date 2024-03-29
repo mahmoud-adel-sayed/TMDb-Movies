@@ -1,11 +1,11 @@
-package com.example.movies.movie.popular.data.source.local.entity
+package com.example.movies.movie.upcoming.data.source.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "movies")
-data class MovieEntity(
+@Entity(tableName = "upcoming_movies")
+data class UpcomingMovieEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id: Long = 0L,

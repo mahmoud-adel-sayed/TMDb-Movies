@@ -12,32 +12,30 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.movies.movie.common.ui.TabsScreen
 import com.example.movies.movie.detail.ui.MovieDetailsScreen
-import com.example.movies.movie.popular.ui.PopularMoviesScreen
 
 /**
  * Destinations used in the App.
  */
-private object MainDestinations {
-    const val POPULAR_MOVIES_ROUTE = "movies/popular"
+object MainDestinations {
+    const val TABS_ROUTE = "tabs"
     const val MOVIE_DETAILS_ROUTE = "movie/details"
 }
 
 @Composable
 fun NavGraph(
     navController: NavHostController = rememberNavController(),
-    onBackPressed: () -> Unit
 ) {
     val actions = remember(navController) { MainActions(navController) }
     NavHost(
         navController = navController,
-        startDestination = MainDestinations.POPULAR_MOVIES_ROUTE,
+        startDestination = MainDestinations.TABS_ROUTE,
     ) {
         composable(
-            route = MainDestinations.POPULAR_MOVIES_ROUTE,
+            route = MainDestinations.TABS_ROUTE,
         ) { backStackEntry: NavBackStackEntry ->
-            PopularMoviesScreen(
-                onBackPressed = onBackPressed,
+            TabsScreen(
                 onMovieClick = {
                     actions.onMovieClick(it, backStackEntry)
                 }
@@ -53,8 +51,8 @@ fun NavGraph(
         ) {
             val movieId = it.arguments?.getLong(KEY_MOVIE_ID) ?: -1
             MovieDetailsScreen(
-                onUpPressed = { actions.onUpPressed(it) },
-                movieId = movieId
+                movieId = movieId,
+                onUpPressed = { actions.onUpPressed(it) }
             )
         }
     }

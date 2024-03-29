@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "remote_keys")
-data class RemoteKeyEntity(
+@Entity(tableName = "popular_remote_keys")
+data class PopularRemoteKeyEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Long,

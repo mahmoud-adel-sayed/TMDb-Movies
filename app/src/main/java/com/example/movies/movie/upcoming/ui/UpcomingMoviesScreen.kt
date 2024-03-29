@@ -1,4 +1,4 @@
-package com.example.movies.movie.popular.ui
+package com.example.movies.movie.upcoming.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,27 +15,27 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemsIndexed
-import com.example.movies.movie.common.ui.MovieCard
-import com.example.movies.movie.common.ui.loading
-import com.example.movies.movie.common.ui.error
 import com.example.movies.movie.common.domain.model.Movie
+import com.example.movies.movie.common.ui.MovieCard
+import com.example.movies.movie.common.ui.error
+import com.example.movies.movie.common.ui.loading
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun PopularMoviesScreen(
+fun UpcomingMoviesScreen(
     modifier: Modifier = Modifier,
     onMovieClick: (movieId: Long) -> Unit,
-    popularMoviesViewModel: PopularMoviesViewModel = hiltViewModel()
+    upcomingMoviesViewModel: UpcomingMoviesViewModel = hiltViewModel()
 ) {
-    PopularMoviesContent(
+    UpcomingMoviesContent(
         modifier = modifier.semantics { testTagsAsResourceId = true },
-        movies = popularMoviesViewModel.getPopularMovies().collectAsLazyPagingItems(),
+        movies = upcomingMoviesViewModel.getUpcomingMovies().collectAsLazyPagingItems(),
         onMovieClick = onMovieClick
     )
 }
 
 @Composable
-private fun PopularMoviesContent(
+private fun UpcomingMoviesContent(
     modifier: Modifier = Modifier,
     movies: LazyPagingItems<Movie>,
     onMovieClick: (movieId: Long) -> Unit,

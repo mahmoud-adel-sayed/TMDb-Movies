@@ -4,12 +4,8 @@ import androidx.compose.runtime.Composable
 import com.example.movies.theme.AppTheme
 
 @Composable
-fun MoviesApp(
-    onBackPressed: () -> Unit
-) {
+fun MoviesApp() {
     AppTheme {
-        NavGraph(
-            onBackPressed = onBackPressed
-        )
+        NavGraph()
     }
 }

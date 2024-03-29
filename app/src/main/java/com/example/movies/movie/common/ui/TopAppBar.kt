@@ -36,6 +36,7 @@ import com.example.movies.util.mirroringBackIcon
  * @param onUpPressed The function that will be invoked when the back icon is pressed.
  * @param isTitleCentered The flag that will determine the alignment of the title.
  * @param navigationIcon The navigation icon.
+ * @param showNavigationIcon the flag to determine if the navigation icon is shown or not.
  */
 @Composable
 fun TopAppBar(
@@ -48,21 +49,24 @@ fun TopAppBar(
             imageVector = mirroringBackIcon(),
             contentDescription = null
         )
-    }
+    },
+    showNavigationIcon: Boolean = true
 ) {
     if (isTitleCentered) {
         CenteredTitleTopAppBar(
             modifier,
             title,
             onUpPressed,
-            navigationIcon
+            navigationIcon,
+            showNavigationIcon
         )
     } else {
         EdgeAlignedTitleTopAppBar(
             modifier,
             title,
             onUpPressed,
-            navigationIcon
+            navigationIcon,
+            showNavigationIcon
         )
     }
 }
@@ -72,7 +76,8 @@ private fun EdgeAlignedTitleTopAppBar(
     modifier: Modifier = Modifier,
     title: String,
     onUpPressed: () -> Unit,
-    navigationIcon: @Composable () -> Unit
+    navigationIcon: @Composable () -> Unit,
+    showNavigationIcon: Boolean
 ) {
     TopAppBar(
         elevation = 0.dp,
@@ -86,10 +91,12 @@ private fun EdgeAlignedTitleTopAppBar(
             )
         },
         navigationIcon = {
-            IconButton(
-                onClick = onUpPressed,
-                content = navigationIcon
-            )
+            if (showNavigationIcon) {
+                IconButton(
+                    onClick = onUpPressed,
+                    content = navigationIcon
+                )
+            }
         }
     )
 }
@@ -99,7 +106,8 @@ private fun CenteredTitleTopAppBar(
     modifier: Modifier = Modifier,
     title: String,
     onUpPressed: () -> Unit,
-    navigationIcon: @Composable () -> Unit
+    navigationIcon: @Composable () -> Unit,
+    showNavigationIcon: Boolean
 ) {
     TopAppBar(
         elevation = 0.dp,
@@ -108,10 +116,12 @@ private fun CenteredTitleTopAppBar(
         contentColor = AppTheme.colors.onSurface
     ) {
         Box {
-            NavigationIcon(
-                onUpPressed,
-                navigationIcon
-            )
+            if (showNavigationIcon) {
+                NavigationIcon(
+                    onUpPressed,
+                    navigationIcon
+                )
+            }
             CenteredTitle(title)
         }
     }
