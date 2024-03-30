@@ -15,6 +15,9 @@ interface PopularMoviesDao {
     @Query("SELECT * from popular_movies Order By id ASC")
     fun getPagingMovies(): PagingSource<Int, PopularMovieEntity>
 
+    @Query("SELECT * from popular_movies")
+    suspend fun getPopularMovies(): List<PopularMovieEntity>
+
     @Query("DELETE FROM popular_movies")
     suspend fun clearAll()
 }
