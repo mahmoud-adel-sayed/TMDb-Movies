@@ -8,11 +8,11 @@ apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    namespace 'com.example.movies'
+    namespace 'com.banquemisr.challenge05'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.movies"
+        applicationId "com.banquemisr.challenge05"
         minSdk 24
         targetSdk 33
         versionCode 1
