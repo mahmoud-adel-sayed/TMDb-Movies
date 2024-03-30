@@ -17,7 +17,7 @@ This sample app uses MVVM Architecture with clean architecture principles, a wel
 Android, the app's components are less dependents and easier to test.
 
 ### Testing
-There are only tests for `GetMovieDetailsUseCase` and `MovieDetailsViewModel` but I will add other
+There are only tests for `GetMovieDetailsUseCase`, `MovieDetailsViewModel` and db testing but I will add other
 tests for more classes and also add different kind of testing like UI, integration or mock server
 testing.
 
