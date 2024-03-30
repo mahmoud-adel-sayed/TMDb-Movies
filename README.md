@@ -22,7 +22,7 @@ tests for more classes and also add different kind of testing like UI, integrati
 testing.
 
 ### Resources
-1. APK link: <https://drive.google.com/file/d/1sUkXuY0sjq7ug4JbBVKekpQfIVkXA9cF/view?usp=sharing>.
+1. APK link: <https://drive.google.com/file/d/1Hc6EB91VaPuEdnbVhhIeZ083HczZV6B1/view?usp=sharing>.
 
 ### Libraries used
 * Lifecycle & ViewModel.
